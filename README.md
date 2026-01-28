@@ -23,7 +23,7 @@ A high-performance, lightweight **Vite.js** template designed for developers who
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/ufukbakan/vite-jjsx-ssr.git](https://github.com/ufukbakan/vite-jjsx-ssr.git)
+    git clone https://github.com/ufukbakan/vite-jjsx-ssr.git
     ```
 2.  **Install dependencies:**
     ```bash
