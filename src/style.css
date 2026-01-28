@@ -1,0 +1,40 @@
+html {
+  background-color: #171717;
+  color: #ddd;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  margin: 0;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+}
+a {
+  color: inherit;
+}
+#app {
+  text-align: center;
+}
+button {
+  padding: 0.5rem 2rem;
+  font: inherit;
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-inline: 0;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+.logo {
+  height: 40px;
+  width: auto;
+  margin-inline: 1rem;
+}
