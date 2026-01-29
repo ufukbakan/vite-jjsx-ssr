@@ -1,26 +1,33 @@
 import { init, transpile } from 'jjsx';
-import type { Routes } from '../infra/router';
 import { getPageComponent } from '../infra/router';
+import { Request } from 'express';
 init();
 
-const SSPMap: Record<string, (url: string) => Promise<any>> = {
-  '/about': async () => ({
+type MaybePromise<T> = T | Promise<T>;
+
+const APIRoutes: Record<string, (_path: string, _req: Express.Request) => MaybePromise<Object>> = {
+  '/api/about': () => ({
     title: 'About',
     description: 'About page'
-  })
+  }),
+  '/api/users': async (_path, _req) => {
+    return { users: [{ id: 1, name: 'John' }, { id: 2, name: 'Jane' }] };
+  },
 };
 
-export async function getSSP(_url: string) {
-  const ssp = SSPMap[_url];
-  if (ssp) {
-    return await ssp(_url);
+export async function getApiData(apiPath: string, req: Request) {
+  const apiRoute = APIRoutes[apiPath];
+  if (apiRoute) {
+    return await apiRoute(apiPath, req);
   }
-  return {};
+  return { _status: 404, error: 'API endpoint not found' };
 }
 
-export async function render(_url: string) {
-  const props = await getSSP(_url);
-  const PageComponent = getPageComponent(_url as keyof Routes);
+export async function render(url: string, req: Request) {
+  const PageComponent = getPageComponent(url);
+  const props = PageComponent.ssp 
+  ? await getApiData(PageComponent.ssp, req) 
+  : PageComponent.defaultProps || { pathName: url };
   const html = transpile(PageComponent(props));
   return { html, head: '' }
 }

@@ -18,9 +18,7 @@ export function hydrate(callback: HydrationCallback) {
 }
 
 export async function clearHydrations() {
-    return Promise.allSettled(cleanUps.map(c => {
-        const result = c();
-        if (result instanceof Promise) return result;
-        return Promise.resolve(result);
-    }));
+    await Promise.allSettled(cleanUps.map(cleanUp => cleanUp()));
+    cleanUps.length = 0;
+    return;
 }

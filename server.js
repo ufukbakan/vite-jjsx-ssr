@@ -32,15 +32,18 @@ if (!isProduction) {
   app.use(base, sirv('./dist/client', { extensions: [] }))
 }
 
-app.use('/ssp*page', async (req, res) => {
+app.use('/api*splat', async (req, res) => {
   try {
     const serverEntry = isProduction
       ? (await import('./dist/server/entry-server.js'))
       : (await vite.ssrLoadModule('/src/entry-server.ts'));
-    const getSSP = serverEntry.getSSP;
-    const page = req.params.page.join('/');
-    const props = await getSSP(page);
-    res.status(200).json(props);
+    const getApiData = serverEntry.getApiData;
+    const data = await getApiData(req.originalUrl, req);
+    res.status(data._status || 200).json(
+      Object.fromEntries(Object.keys(data)
+        .filter(key => key !== '_status')
+        .map(key => [key, data[key]]))
+    );
   } catch (e) {
     console.error(e.message)
     console.error(e.stack)
@@ -67,7 +70,7 @@ app.use('*all', async (req, res) => {
       render = (await import('./dist/server/entry-server.js')).render
     }
 
-    const rendered = await render(url)
+    const rendered = await render(url, req);
 
     const html = template
       .replace(`<!--app-head-->`, rendered.head ?? '')

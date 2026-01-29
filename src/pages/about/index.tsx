@@ -6,7 +6,7 @@ interface AboutProps {
   description: string;
 }
 
-About.isSspRequired = true;
+About.ssp = "/api/about";
 
 export default function About({ title, description }: AboutProps) {
   return (

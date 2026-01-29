@@ -5,34 +5,28 @@ import { clearHydrations } from "./hydration";
 import Home from "../src/pages/Home";
 import About from "../src/pages/about";
 
-const routes = {
+const routes : Record<string, FunctionComponent<any>> = {
     '/': Home,
     '/about': About,
-} as const;
-
-export type Routes = typeof routes;
+};
 
 interface FunctionComponent<T = any> extends JSX.FunctionComponent<T> {
-    isSspRequired?: boolean;
+    ssp?: string;
+    defaultProps?: T;
 }
 
-export function getPageComponent(path: keyof typeof routes): FunctionComponent<any> {
+export function getPageComponent(path: string): FunctionComponent<any> {
     return routes[path] || NotFound;
 }
 
 export async function clientRender(pathName: string) {
     await clearHydrations();
-    // clean import module cache
-    // const domParser = new DOMParser();
-    const PageComponent = getPageComponent(pathName as keyof Routes);
-    const props = PageComponent.isSspRequired
-        ? await fetch(`/ssp${pathName}`).then(res => res.json())
-        : { url: pathName };
-    // const props = {};
+    const PageComponent = getPageComponent(pathName);
+    const props = PageComponent.ssp
+        ? await fetch(PageComponent.ssp).then(res => res.json())
+        : PageComponent.defaultProps || { pathName };
     const html = transpile(PageComponent(props));
-    // const doc = domParser.parseFromString(html, "text/html");
     document.getElementById("app")!.innerHTML = html;
-    // document.head.innerHTML = doc.head.innerHTML;
     history.pushState(null, "", pathName);
     document.dispatchEvent(new Event("load"));
 }
