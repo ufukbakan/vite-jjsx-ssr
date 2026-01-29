@@ -1,16 +1,15 @@
 type ClearCallback = () => void | Promise<void>;
-type HydrationCallback = () => ClearCallback | Promise<ClearCallback>;
+type HydrationCallback = () => ClearCallback | Promise<ClearCallback> | void;
 
 const cleanUps: ClearCallback[] = [];
 
 export function hydrate(callback: HydrationCallback) {
     if (typeof window !== "undefined") {
         async function CombinedCallback() {
-            let cleaner = callback();
-            if (cleaner instanceof Promise) {
-                cleaner = await cleaner;
+            const cleaner = await callback();
+            if (cleaner) {
+                cleanUps.push(cleaner);
             }
-            cleanUps.push(cleaner);
             document.removeEventListener("load", CombinedCallback);
         }
         document.addEventListener("load", CombinedCallback);
