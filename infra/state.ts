@@ -1,16 +1,31 @@
-export function use<T>(initialState: T) {
-    let state = initialState;
-    type Listener = (newState: T) => void;
-    const subscribers = new Set<Listener>();
+type Getter<T> = () => T;
+type Factory<T> = (currentValue: T) => T;
+type Setter<T> = {
+    (fn: Factory<T>): void;
+    (value: T): void;
+}
+type Subscriber<T> = (value: T) => void;
+type Subscribe<T> = (subsriber: Subscriber<T>) => VoidFunction;
 
-    type Factory = (currentValue: T) => T;
-    function isFactory(fn: Factory | T): fn is Factory {
+type State<T> = {
+    get: Getter<T>;
+    set: Setter<T>;
+    subscribe: Subscribe<T>;
+}
+
+export function use<T>(): State<T>;
+export function use<T>(initialState: T): State<T>;
+export function use<T>(initialState?: T) {
+    let state: T;
+    if (initialState !== undefined) {
+        state = initialState;
+    }
+    const subscribers = new Set<Subscriber<T>>();
+    function isFactory(fn: Factory<T> | T): fn is Factory<T> {
         return typeof fn === "function";
     }
 
-    function setter(fn: Factory): void;
-    function setter(newState: T): void;
-    function setter(newStateOrFn: Factory | T) {
+    function setter(newStateOrFn: Factory<T> | T) {
         if (isFactory(newStateOrFn)) {
             state = newStateOrFn(state);
         } else {
@@ -25,5 +40,12 @@ export function use<T>(initialState: T) {
             subscribers.delete(fn);
         }
     }
-    return [state, setter, subscribe] as const;
+
+    const getter = () => state;
+
+    return {
+        get: getter,
+        set: setter,
+        subscribe: subscribe
+    };
 }

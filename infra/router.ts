@@ -16,7 +16,7 @@ interface FunctionComponent<T = any> extends JSX.FunctionComponent<T> {
 }
 
 export function getPageComponent(path: string): FunctionComponent<any> {
-    return routes[path] || NotFound;
+    return routes[path] || NotFound; // partial match logic can be added here
 }
 
 export async function clientRender(pathName: string) {
@@ -28,5 +28,5 @@ export async function clientRender(pathName: string) {
     const html = transpile(PageComponent(props));
     document.getElementById("app")!.innerHTML = html;
     history.pushState(null, "", pathName);
-    document.dispatchEvent(new Event("load"));
+    window.dispatchEvent(new Event("load"));
 }

@@ -9,7 +9,7 @@ declare global {
     }
 }
 
-document.addEventListener("load", () => {
+window.addEventListener("load", () => {
     const anchors = document.querySelectorAll<HTMLAnchorElement>("a");
     anchors.forEach((anchor) => {
         if (anchor._isHandled) return;

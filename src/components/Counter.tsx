@@ -2,14 +2,14 @@ import { hydrate } from "../../infra/hydration";
 import { use } from "../../infra/state";
 
 export default function Counter() {
-    const [count, setCount, subscribeToCount] = use(0);
+    const count = use(0);
     hydrate(() => {
         const counterElement = document.getElementById("counter")!;
-        const unsubscribeCounter = subscribeToCount((newCount) => {
+        const unsubscribeCounter = count.subscribe((newCount) => {
             counterElement.textContent = newCount.toString();
         });
         counterElement.addEventListener("click", () => {
-            setCount((prev) => prev + 1);
+            count.set((prev) => prev + 1);
         });
         return () => {
             // cleanups
@@ -18,7 +18,7 @@ export default function Counter() {
     });
     return (
         <div class="card">
-            <button id="counter" type="button">{count}</button>
+            <button id="counter" type="button">{count.get()}</button>
         </div>
     )
 }
