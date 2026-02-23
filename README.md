@@ -23,13 +23,14 @@ A high-performance, lightweight **Vite.js** template designed for developers who
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/ufukbakan/vite-jjsx-ssr.git
+    npx degit ufukbakan/vite-jjsx-ssr your-project
     ```
 2.  **Install dependencies:**
     ```bash
+    cd your-project
     bun install
     # OR
-    npm install
+    npm/pnpm/yarn install
     ```
 3.  **Run development server:**
     ```bash
