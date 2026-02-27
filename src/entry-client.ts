@@ -1,5 +1,5 @@
 import { init } from 'jjsx';
-import { clientRender } from '../infra/router';
+import { clientRender } from '../infra/render';
 import './style.css';
 init();
 

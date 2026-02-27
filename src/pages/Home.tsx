@@ -14,7 +14,7 @@ export default function Home() {
             <a href='https://www.npmjs.com/package/jjsx'>
                 <img src='/jjsx.svg' class="logo" alt="JJSX logo" />
             </a>
-            <h1>Hello World Vite!</h1>
+            <h1>Hello World!</h1>
             <Counter />
         </Layout>
     )

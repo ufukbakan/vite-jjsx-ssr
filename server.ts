@@ -1,5 +1,7 @@
 import fs from 'node:fs/promises'
+import type { Server } from 'node:http'
 import express from 'express'
+import { ViteDevServer } from 'vite'
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'
@@ -12,11 +14,11 @@ const templateHtml = isProduction
   : ''
 
 // Create http server
-const app = express()
+export const app = express()
 
 // Add Vite or respective production middlewares
 /** @type {import('vite').ViteDevServer | undefined} */
-let vite
+let vite: ViteDevServer
 if (!isProduction) {
   const { createServer } = await import('vite')
   vite = await createServer({
@@ -44,7 +46,7 @@ app.use('/api*splat', async (req, res) => {
         .filter(key => key !== '_status')
         .map(key => [key, data[key]]))
     );
-  } catch (e) {
+  } catch (e: any) {
     console.error(e.message)
     console.error(e.stack)
     res.status(500).end(e.stack)
@@ -77,14 +79,24 @@ app.use('*all', async (req, res) => {
       .replace(`<!--app-html-->`, rendered.html ?? '')
 
     res.status(200).set({ 'Content-Type': 'text/html' }).send(html)
-  } catch (e) {
+  } catch (e: any) {
     vite?.ssrFixStacktrace(e)
     console.error(e.stack)
     res.status(500).end(e.stack)
   }
 })
 
-// Start http server
-app.listen(port, () => {
-  console.log(`Server started at http://localhost:${port}`)
+export let server: Server;
+
+export const serverOrigin: Promise<string> = new Promise((resolve, reject) => {
+  server = app.listen(port, (error: any) => {
+    if (error) {
+      console.error(error)
+      reject(error)
+    } else {
+      const origin = `http://localhost:${port}`;
+      console.log(`Server started at ${origin}`)
+      resolve(origin)
+    }
+  })
 })
