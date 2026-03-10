@@ -10,7 +10,7 @@ interface User {
   website: string
 }
 
-Profile.ssp = "/api/users";
+Profile.ssp = "/api/profile/:id";
 
 export default function Profile(user: User) {
   return (

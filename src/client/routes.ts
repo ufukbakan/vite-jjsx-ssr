@@ -4,7 +4,7 @@ import { FunctionComponent } from '../infra/router';
 
 const routes: Record<string, FunctionComponent<any>> = {
     '/': Home,
-    '/profile': Profile,
+    '/profile/:id': Profile,
 };
 
 export default routes;

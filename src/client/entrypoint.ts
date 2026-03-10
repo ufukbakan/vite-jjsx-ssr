@@ -21,4 +21,4 @@ window.addEventListener("load", () => {
         anchor._isHandled = true;
     });
 })
-clientRender(location.pathname);
+clientRender(location.pathname+location.search);

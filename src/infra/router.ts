@@ -1,11 +1,23 @@
 import routes from "../client/routes";
 import NotFound from "../client/pages/NotFound";
+import { matchRoute } from "./utils";
 
 export interface FunctionComponent<T = any> extends JSX.FunctionComponent<T> {
     ssp?: string;
     defaultProps?: T;
 }
 
-export function getPageComponent(path: string): FunctionComponent<any> {
-    return routes[path] || NotFound; // partial match logic can be added here
+interface PageComponentResult {
+    component: FunctionComponent<any>;
+    params: Record<string, string>;
+}
+
+export function getPageComponent(path: string): PageComponentResult {
+    for (const [routePath, component] of Object.entries(routes)) {
+        const matchedParams = matchRoute(routePath, path);
+        if (matchedParams) {
+            return { component, params: matchedParams };
+        }
+    }
+    return { component: NotFound, params: {} };
 }
