@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from "fs";
 import { dirname, join, resolve } from "path";
-import { serverOrigin } from "../server";
-import { routes } from "./router";
+import { serverOrigin } from "../../app";
+import routes from "../client/routes";
 
 const targetDir = resolve(import.meta.dirname, '../dist/client');
 

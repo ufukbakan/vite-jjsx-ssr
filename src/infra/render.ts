@@ -1,7 +1,7 @@
 import { transpile } from "jjsx";
 import { clearHydrations } from "./hydration";
 import { getPageComponent } from "./router";
-import ErrorPage from "../src/pages/ErrorPage";
+import ErrorPage from "../client/pages/ErrorPage";
 
 export async function clientRender(pathName: string) {
     // Show loading indicator if only page takes more than 250ms to load

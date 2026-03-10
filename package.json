@@ -1,15 +1,15 @@
 {
   "name": "vite-jjsx-ssr",
   "private": true,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "scripts": {
-    "dev": "bun --inspect=6499 server.js",
+    "dev": "bun --inspect=6499 app.ts",
     "build": "npm run build:server && npm run build:client",
-    "build:client": "vite build --outDir dist/client",
-    "build:server": "vite build --ssr src/entry-server.ts --outDir dist/server",
+    "build:client": "vite build --config vite.config.client.ts",
+    "build:server": "vite build --config vite.config.server.ts",
     "build:static": "cross-env NODE_ENV=production bun infra/ssg.ts",
-    "preview": "cross-env NODE_ENV=production bun server.ts"
+    "preview": "cross-env NODE_ENV=production bun app.ts"
   },
   "dependencies": {
     "compression": "^1.8.1",

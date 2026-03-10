@@ -25,6 +25,8 @@ if (!isProduction) {
     server: { middlewareMode: true },
     appType: 'custom',
     base,
+    root: './src/client',
+    publicDir: './public',
   })
   app.use(vite.middlewares)
 } else {
@@ -37,8 +39,9 @@ if (!isProduction) {
 app.use('/api*splat', async (req, res) => {
   try {
     const serverEntry = isProduction
-      ? (await import('./dist/server/entry-server.js'))
-      : (await vite.ssrLoadModule('/src/entry-server.ts'));
+      // @ts-ignore
+      ? (await import('./dist/server/entrypoint.js'))
+      : (await vite.ssrLoadModule('./src/server/entrypoint.ts'));
     const getApiData = serverEntry.getApiData;
     const data = await getApiData(req.originalUrl, req);
     res.status(data._status || 200).json(
@@ -60,16 +63,17 @@ app.use('*all', async (req, res) => {
 
     /** @type {string} */
     let template
-    /** @type {import('./src/entry-server.ts').render} */
+    /** @type {import('./src/server/entrypoint').render} */
     let render
     if (!isProduction) {
       // Always read fresh template in development
-      template = await fs.readFile('./index.html', 'utf-8')
+      template = await fs.readFile('./src/client/index.html', 'utf-8')
       template = await vite.transformIndexHtml(url, template)
-      render = (await vite.ssrLoadModule('/src/entry-server.ts')).render
+      render = (await vite.ssrLoadModule('./src/server/entrypoint.ts')).render
     } else {
       template = templateHtml
-      render = (await import('./dist/server/entry-server.js')).render
+      // @ts-ignore
+      render = (await import('./dist/server/entrypoint.js')).render
     }
 
     const rendered = await render(url, req);

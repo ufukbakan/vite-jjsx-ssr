@@ -1,20 +1,9 @@
 import { init, transpile } from 'jjsx';
 import { getPageComponent } from '../infra/router';
 import { Request } from 'express';
-import ErrorPage from './pages/ErrorPage';
+import ErrorPage from '../client/pages/ErrorPage';
+import APIRoutes from './routes';
 init();
-
-type MaybePromise<T> = T | Promise<T>;
-
-const APIRoutes: Record<string, (_path: string, _req: Express.Request) => MaybePromise<Object>> = {
-  '/api/about': () => ({
-    title: 'About',
-    description: 'About page'
-  }),
-  '/api/users': async (_path, _req) => {
-    return { users: [{ id: 1, name: 'John' }, { id: 2, name: 'Jane' }] };
-  },
-};
 
 export async function getApiData(apiPath: string, req: Request) {
   const apiRoute = APIRoutes[apiPath];

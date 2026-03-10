@@ -2,7 +2,6 @@ import { init } from 'jjsx';
 import { clientRender } from '../infra/render';
 import './style.css';
 init();
-
 declare global {
     interface HTMLAnchorElement {
         _isHandled: boolean;
@@ -15,7 +14,7 @@ window.addEventListener("load", () => {
         if (anchor._isHandled) return;
         anchor.addEventListener("click", (event) => {
             const targetUrl = new URL(anchor.href);
-            if(targetUrl.origin !== location.origin || anchor.download) return;
+            if (targetUrl.origin !== location.origin || anchor.download) return;
             event.preventDefault();
             clientRender(targetUrl.pathname);
         });
