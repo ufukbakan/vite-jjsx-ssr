@@ -3,9 +3,10 @@ import { dirname, join, resolve } from "path";
 import { serverOrigin } from "../../app";
 import routes from "../client/routes";
 
-const targetDir = resolve(import.meta.dirname, '../dist/client');
+const targetDir = resolve(import.meta.dirname, '../../dist/client');
 
 for (const path in routes) {
+    if (path.includes('/:')) continue;
     const origin = await serverOrigin;
     console.log('Building page:', path);
     const response = await fetch(`${origin}${path}`);

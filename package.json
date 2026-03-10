@@ -8,7 +8,7 @@
     "build": "npm run build:server && npm run build:client",
     "build:client": "vite build --config vite.config.client.ts",
     "build:server": "vite build --config vite.config.server.ts",
-    "build:static": "cross-env NODE_ENV=production bun infra/ssg.ts",
+    "build:static": "cross-env NODE_ENV=production bun src/infra/ssg.ts",
     "preview": "cross-env NODE_ENV=production bun app.ts",
     "test": "vitest --run --coverage"
   },
