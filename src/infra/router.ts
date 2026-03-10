@@ -1,6 +1,6 @@
 import routes from "../client/routes";
 import NotFound from "../client/pages/NotFound";
-import { matchRoute } from "./utils";
+import { matchRoute } from "./url";
 
 export interface FunctionComponent<T = any> extends JSX.FunctionComponent<T> {
     ssp?: string;

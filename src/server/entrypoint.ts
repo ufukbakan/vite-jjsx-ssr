@@ -1,7 +1,8 @@
-import { init, transpile } from 'jjsx';
+import { init } from 'jjsx';
+import { renderPage } from '../infra/render';
+import { matchRoute, parseUrl } from '../infra/url';
+import { transpile } from 'jjsx';
 import ErrorPage from '../client/pages/ErrorPage';
-import { getPageComponent } from '../infra/router';
-import { matchRoute, parseUrl, qs, replaceParams } from '../infra/utils';
 import APIRoutes from './routes';
 init();
 
@@ -24,13 +25,7 @@ export async function getApiData(url: string) {
 
 export async function render(url: string) {
   try {
-    const { path, query } = parseUrl(url);
-    const { component, params } = getPageComponent(path);
-    const sspUrl = component.ssp ? replaceParams(component.ssp + qs(query), params) : null;
-    const props = sspUrl
-      ? await getApiData(sspUrl)
-      : component.defaultProps || { url, params };
-    const html = transpile(component(props));
+    const html = await renderPage(url, getApiData);
     return { html, head: '' }
   } catch (error) {
     return {

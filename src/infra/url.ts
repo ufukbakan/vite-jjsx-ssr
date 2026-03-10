@@ -6,7 +6,7 @@ export function qs(query: Record<string, string>): string {
 
 export function parseUrl(url: string): { path: string; query: Record<string, string> } {
   const argsIndex = url.indexOf('?');
-  const queryStr = argsIndex === -1 ? '' : url.slice(argsIndex);
+  const queryStr = argsIndex === -1 ? '' : url.slice(argsIndex+1);
   return {
     path: url.slice(0, argsIndex === -1 ? url.length : argsIndex),
     query: queryStr.split('&').reduce((acc, param) => {
