@@ -1,14 +1,6 @@
+import { User } from "../../../dto/user";
 import Layout from "../_layout";
 import './style.sass';
-
-interface User {
-  id: number
-  name: string
-  username: string
-  email: string
-  phone: string
-  website: string
-}
 
 Profile.ssp = "/api/profile/:id";
 

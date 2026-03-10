@@ -9,7 +9,8 @@
     "build:client": "vite build --config vite.config.client.ts",
     "build:server": "vite build --config vite.config.server.ts",
     "build:static": "cross-env NODE_ENV=production bun infra/ssg.ts",
-    "preview": "cross-env NODE_ENV=production bun app.ts"
+    "preview": "cross-env NODE_ENV=production bun app.ts",
+    "test": "vitest --run --coverage"
   },
   "dependencies": {
     "compression": "^1.8.1",
@@ -19,11 +20,14 @@
     "sirv": "^3.0.2"
   },
   "devDependencies": {
+    "@fetch-mock/vitest": "^0.2.18",
     "@types/compression": "^1.8.1",
     "@types/express": "^5.0.6",
     "@types/node": "^24.10.2",
+    "@vitest/coverage-v8": "4.0.18",
     "cross-env": "^10.1.0",
     "typescript": "~5.9.3",
-    "vite": "^7.2.7"
+    "vite": "^7.2.7",
+    "vitest": "^4.0.18"
   }
 }
