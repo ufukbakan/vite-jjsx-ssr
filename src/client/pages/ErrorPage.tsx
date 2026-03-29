@@ -1,10 +1,6 @@
 import Layout from "./_layout";
 
-interface Props {
-    error: Error;
-}
-
-export default function ErrorPage({ error }: Props) {
+export default function ErrorPage(error: Error) {
     return (
         <Layout>
             <h1>Error</h1>

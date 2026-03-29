@@ -1,15 +1,19 @@
 import fetchMock from "@fetch-mock/vitest";
 import { describe, expect, test } from "vitest";
 import { User } from "../../dto/user";
-import getUserProfile from "../api/profile";
+import getUserProfile from "../api/Profile.cara";
 
 
 describe("Profile API", () => {
     test("GET /api/profile/10", async () => {
         const mockRequest = {
             params: { id: "10" },
-            path: "/api/profile/10",
-            query: {}
+            url: "/api/profile/10",
+            query: {},
+            headers: {},
+            cookies: {},
+            method: "GET",
+            data: null
         };
         const mockResponse: User = {
             id: "10",

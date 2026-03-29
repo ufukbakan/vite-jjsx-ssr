@@ -1,4 +1,4 @@
-import getUserProfile from "./api/profile";
+import getUserProfile from "./api/Profile.cara";
 import { ApiRequest } from "./entrypoint";
 
 type MaybePromise<T> = T | Promise<T>;

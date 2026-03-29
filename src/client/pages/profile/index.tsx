@@ -2,8 +2,6 @@ import { User } from "../../../dto/user";
 import Layout from "../_layout";
 import './style.sass';
 
-Profile.ssp = "/api/profile/:id";
-
 export default function Profile(user: User) {
   return (
     <Layout>

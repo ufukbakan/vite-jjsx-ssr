@@ -2,11 +2,15 @@ import { defineConfig } from 'vite'
 import path from 'path'
 
 export default defineConfig({
-  publicDir: path.resolve(__dirname, 'public'),
-  root: path.resolve(__dirname, 'src/client'),
-  base: '/', // Change this if you serve from a sub-path like /app/
+  publicDir: path.resolve(import.meta.dirname, 'public'),
+  root: path.resolve(import.meta.dirname, 'src/client'),
+  base: '/',
+  appType: 'custom',
+  server: {
+    middlewareMode: true
+  },
   build: {
-    outDir: path.resolve(__dirname, 'dist/client'),
+    outDir: path.resolve(import.meta.dirname, 'dist/client'),
     emptyOutDir: true,
     manifest: true,
     minify: true,

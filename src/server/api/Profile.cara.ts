@@ -1,7 +1,7 @@
+import { Hallmark } from "@carats/core";
 import { User } from "../../dto/user";
-import { ApiRequest } from "../entrypoint";
 
-export default async function getUserProfile(req: ApiRequest): Promise<User> {
+const getUserProfile: Hallmark<Promise<User>> = async (req) => {
   const id = req.params.id;
   if (!id) {
     throw new Error('User ID is required');
@@ -9,3 +9,5 @@ export default async function getUserProfile(req: ApiRequest): Promise<User> {
   const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
   return await response.json();
 }
+
+export default getUserProfile;

@@ -1,5 +1,4 @@
-import { hydrate } from "../../infra/hydration";
-import { use } from "../../infra/state";
+import { use, hydrate } from "@carats/hooks";
 
 export default function Counter() {
     const count = use(0);
