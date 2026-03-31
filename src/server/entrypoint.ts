@@ -1,4 +1,7 @@
-import defineServerEntry from '@carats/ssr';
+import { culet, defineServerEntry } from '@carats/ssr';
 import facets from '../client/facets.cara';
+import getUserProfile from './culets/Profile.cara';
 
-export default defineServerEntry(facets, import.meta.glob('./api/*.ts', { eager: true }))
+culet('/profile/:id', getUserProfile);
+
+export default defineServerEntry(facets)

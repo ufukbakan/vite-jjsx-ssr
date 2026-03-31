@@ -1,7 +1,7 @@
 import fetchMock from "@fetch-mock/vitest";
 import { describe, expect, test } from "vitest";
 import { User } from "../../dto/user";
-import getUserProfile from "../api/Profile.cara";
+import getUserProfile from "../culets/Profile.cara";
 
 
 describe("Profile API", () => {

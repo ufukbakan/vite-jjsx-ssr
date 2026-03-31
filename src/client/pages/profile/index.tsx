@@ -1,8 +1,9 @@
+import { Burnish } from "@carats/render"
 import { User } from "../../../dto/user";
 import Layout from "../_layout";
 import './style.sass';
 
-export default function Profile(user: User) {
+export default Burnish<User>((user) => {
   return (
     <Layout>
       <section id="profile">
@@ -13,4 +14,4 @@ export default function Profile(user: User) {
       </section>
     </Layout>
   )
-}
+})

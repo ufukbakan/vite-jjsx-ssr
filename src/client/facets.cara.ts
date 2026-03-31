@@ -6,13 +6,8 @@ import Profile from './pages/profile';
 
 const facets: Facets = {
     routes: {
-        '/': {
-            component: Home,
-        },
-        '/profile/:id': {
-            component: Profile,
-            hallmark: 'Profile'
-        }
+        '/': Home,
+        '/profile/:id': Profile
     },
     suspense: {
         loading: () => '💎 Loading... 💎',
