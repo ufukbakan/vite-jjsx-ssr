@@ -1,6 +1,6 @@
-import { culet, Culet } from "@carats/ssr";
+import { culet } from "@carats/ssr";
 
-const getTradeData: Culet<Promise<TradeData>> = async (req) => {
+export default culet('/trade/:symbol', async (req) => {
   const symbol = req.params.symbol;
   if (!symbol) {
     throw new Error('Symbol is required');
@@ -29,6 +29,4 @@ const getTradeData: Culet<Promise<TradeData>> = async (req) => {
       ],
     },
   };
-}
-
-export default culet('/trade/:symbol', getTradeData)
+})

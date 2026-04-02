@@ -1,12 +1,12 @@
-import { Facets } from '@carats/render';
+import { defineFacets } from '@carats/render';
 import ErrorPage from './pages/_error';
+import NotFound from './pages/_not_found';
 import Home from './pages/home';
 import Market from './pages/market';
-import NotFound from './pages/_not_found';
 import Profile from './pages/profile';
 import Trade from './pages/trade';
 
-const facets: Facets = {
+export default defineFacets({
     routes: {
         '/': Home,
         '/profile': Profile,
@@ -19,6 +19,4 @@ const facets: Facets = {
         notFound: NotFound
     },
     inAppRouting: true
-}
-
-export default facets;
+});
