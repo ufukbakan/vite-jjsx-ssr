@@ -1,0 +1,45 @@
+@use '../base.sass' as *
+
+#search-bar
+  display: flex
+  align-items: center
+  gap: 0.5rem
+  background: rgba($color-charcoal, 0.6)
+  border: 1px solid rgba($color-gold, 0.12)
+  border-radius: $radius-sm
+  padding: 0.375rem 0.75rem
+  transition: border-color $transition-base
+
+  &:focus-within
+    border-color: rgba($color-gold, 0.4)
+
+  .search-icon
+    color: $color-ash
+    flex-shrink: 0
+
+  input
+    background: transparent
+    border: none
+    outline: none
+    color: $color-platinum
+    font-family: $font-body
+    font-size: 0.8125rem
+    width: 180px
+    padding: 0.375rem 0
+
+    &::placeholder
+      color: $color-ash
+
+  .btn-ghost
+    padding: 0.375rem 0.875rem
+    font-size: 0.75rem
+
+@media (max-width: $breakpoint-md)
+  #search-bar
+    width: 100%
+
+    input
+      width: 100%
+
+    .btn-ghost
+      white-space: nowrap

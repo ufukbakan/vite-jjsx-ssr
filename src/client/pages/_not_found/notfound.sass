@@ -1,0 +1,23 @@
+@use '../../base' as *
+
+.notfound-page
+  text-align: center
+  padding: 6rem 1.5rem
+
+.notfound-code
+  font-family: $font-headline
+  font-size: 8rem
+  font-weight: 900
+  background: $gradient-gold
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  background-clip: text
+  line-height: 1
+  margin-bottom: 1rem
+
+@media (max-width: $breakpoint-md)
+  .notfound-page
+    padding: 3rem 1rem
+
+  .notfound-code
+    font-size: 5rem

@@ -1,0 +1,182 @@
+@use '../../base' as *
+
+.app-header
+  position: sticky
+  top: 0
+  z-index: 100
+  background: rgba($color-obsidian, 0.85)
+  backdrop-filter: blur(20px)
+  border-bottom: 1px solid rgba($color-gold, 0.08)
+
+.header-inner
+  max-width: 1280px
+  margin: 0 auto
+  padding: 0 1.5rem
+  height: 64px
+  display: flex
+  align-items: center
+  gap: 2rem
+
+.brand
+  display: flex
+  align-items: center
+  gap: 0.5rem
+  text-decoration: none
+  flex-shrink: 0
+
+.brand-icon
+  color: $color-gold
+  font-size: 1.25rem
+
+.brand-name
+  font-family: $font-headline
+  font-size: 1.125rem
+  font-weight: 700
+  color: $color-ivory
+  letter-spacing: -0.01em
+
+.nav-links
+  display: flex
+  gap: 0.25rem
+
+.nav-link
+  padding: 0.5rem 0.875rem
+  font-size: 0.8125rem
+  font-weight: 500
+  color: $color-silver
+  border-radius: $radius-sm
+  transition: color $transition-fast, background $transition-fast
+
+  &:hover
+    color: $color-ivory
+    background: rgba($color-gold, 0.06)
+
+.main-content
+  min-height: calc(100vh - 64px - 56px)
+
+.app-footer
+  border-top: 1px solid rgba($color-gold, 0.06)
+  padding: 1rem 0
+
+.footer-inner
+  max-width: 1280px
+  margin: 0 auto
+  padding: 0 1.5rem
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+.footer-brand
+  font-family: $font-headline
+  font-size: 0.875rem
+  color: $color-gold-dim
+
+.footer-copy
+  font-size: 0.75rem
+  color: $color-ash
+
+.mobile-menu-toggle
+  display: none
+  flex-direction: column
+  justify-content: center
+  gap: 5px
+  background: none
+  border: none
+  cursor: pointer
+  padding: 0.5rem
+  margin-left: auto
+
+  span
+    display: block
+    width: 20px
+    height: 2px
+    background: $color-platinum
+    border-radius: 2px
+    transition: all $transition-fast
+
+.mobile-overlay
+  display: none
+
+.mobile-menu
+  display: none
+
+.mobile-overlay.open
+  opacity: 1
+  pointer-events: auto
+
+.mobile-menu.open
+  transform: translateX(0)
+
+@media (max-width: $breakpoint-lg)
+  .header-inner
+    gap: 1rem
+
+  .nav-links
+    gap: 0
+
+@media (max-width: $breakpoint-md)
+  .header-inner
+    padding: 0 1rem
+
+  .nav-links
+    display: none
+
+  .header-inner > #search-bar
+    display: none
+
+  .mobile-menu-toggle
+    display: flex
+
+  .mobile-overlay
+    display: block
+    position: fixed
+    inset: 0
+    z-index: 200
+    background: rgba(0, 0, 0, 0.6)
+    backdrop-filter: blur(4px)
+    opacity: 0
+    pointer-events: none
+    transition: opacity $transition-base
+
+  .mobile-menu
+    display: flex
+    flex-direction: column
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    z-index: 300
+    width: 280px
+    max-width: 85vw
+    background: $color-onyx
+    border-left: 1px solid rgba($color-gold, 0.1)
+    padding: 1.5rem
+    transform: translateX(100%)
+    transition: transform $transition-base
+
+  .mobile-nav
+    display: flex
+    flex-direction: column
+    gap: 0.25rem
+    margin-top: 2rem
+
+    .nav-link
+      padding: 0.75rem 1rem
+      font-size: 0.9375rem
+
+  .mobile-search
+    margin-top: 1.5rem
+    padding-top: 1.5rem
+    border-top: 1px solid rgba($color-gold, 0.08)
+
+    #search-bar
+      width: 100%
+
+      input
+        width: 100%
+
+  .footer-inner
+    padding: 0 1rem
+    flex-direction: column
+    gap: 0.5rem
+    text-align: center

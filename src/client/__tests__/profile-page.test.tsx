@@ -16,10 +16,12 @@ test("Render profile page", () => {
 
     const page = transpile(<Profile {...mockUser} />)
 
-    expect(page).toContain('<nav>'); // Layout should be present
+    expect(page).toContain('app-header');
     expect(page).toContain("John Doe");
     expect(page).toContain("john@example.com");
     expect(page).toContain("johndoe");
     expect(page).toContain("123-456-7890");
     expect(page).toContain("johndoe.com");
+    expect(page).toContain("Vault Member");
+    expect(page).toContain("Portfolio Value");
 });

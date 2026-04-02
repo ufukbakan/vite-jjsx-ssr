@@ -1,0 +1,57 @@
+@use '../../base' as *
+
+.market-page
+  padding-top: 2rem
+
+  h1
+    margin-bottom: 0.5rem
+
+.market-query
+  color: $color-ash
+  margin-bottom: 2rem
+
+.token-card
+  text-decoration: none
+  display: block
+
+  .token-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 0.5rem
+
+  .token-symbol
+    font-family: $font-label
+    font-size: 0.8125rem
+    text-transform: uppercase
+    letter-spacing: 0.1em
+    color: $color-gold
+    background: rgba($color-gold, 0.1)
+    padding: 0.25rem 0.75rem
+    border-radius: 100px
+
+  strong
+    display: block
+    color: $color-ivory
+    font-size: 1rem
+    margin-bottom: 0.5rem
+
+  .token-price
+    font-family: $font-headline
+    font-size: 1.5rem
+    font-weight: 700
+    color: $color-ivory
+    margin-bottom: 0.75rem
+
+  .token-meta
+    display: flex
+    gap: 1rem
+    font-size: 0.75rem
+    color: $color-ash
+
+@media (max-width: $breakpoint-md)
+  .market-page
+    padding-top: 1.25rem
+
+  .token-card .token-price
+    font-size: 1.25rem

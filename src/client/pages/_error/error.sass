@@ -1,0 +1,38 @@
+@use '../../base' as *
+
+.error-page
+  text-align: center
+  padding: 4rem 1.5rem
+
+.error-icon
+  font-size: 3rem
+  margin-bottom: 1rem
+  color: $color-amber
+
+.error-message
+  color: $color-silver
+  font-size: 1.125rem
+  margin-bottom: 2rem
+
+.error-stack
+  margin-top: 2rem
+  text-align: left
+  background: rgba($color-charcoal, 0.5)
+  border: 1px solid rgba($color-slate, 0.3)
+  border-radius: $radius-sm
+  padding: 1rem
+  font-size: 0.75rem
+  color: $color-ash
+  overflow-x: auto
+  max-width: 100%
+
+@media (max-width: $breakpoint-md)
+  .error-page
+    padding: 2rem 1rem
+
+  .error-message
+    font-size: 1rem
+
+  .error-stack
+    font-size: 0.6875rem
+    padding: 0.75rem

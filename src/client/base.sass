@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap')
+
+// Luxurious dark theme design tokens
+$color-obsidian: #0B0B0F
+$color-onyx: #121218
+$color-charcoal: #1A1A24
+$color-graphite: #252533
+$color-slate: #3A3A50
+$color-ash: #6B6B80
+$color-silver: #9494A8
+$color-platinum: #D4D4E0
+$color-ivory: #F0F0F5
+
+$color-gold: #C9A84C
+$color-gold-bright: #E8C547
+$color-gold-dim: #A68A3E
+$color-champagne: #F5E6C8
+$color-rose-gold: #B76E79
+$color-emerald: #2ECC71
+$color-ruby: #E74C3C
+$color-sapphire: #3498DB
+$color-amber: #F39C12
+
+$gradient-gold: linear-gradient(135deg, $color-gold-dim, $color-gold-bright, $color-gold)
+$gradient-dark: linear-gradient(180deg, $color-onyx, $color-obsidian)
+$gradient-card: linear-gradient(145deg, rgba($color-charcoal, 0.8), rgba($color-onyx, 0.95))
+
+$font-headline: 'Playfair Display', serif
+$font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif
+$font-label: 'Cormorant Garamond', serif
+$font-mono: 'JetBrains Mono', 'Fira Code', monospace
+
+$radius-sm: 6px
+$radius-md: 12px
+$radius-lg: 20px
+$radius-xl: 28px
+
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3)
+$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4)
+$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5)
+$shadow-gold: 0 4px 20px rgba($color-gold, 0.15)
+
+$transition-fast: 0.15s ease
+$transition-base: 0.25s ease
+$transition-slow: 0.4s ease
+
+$breakpoint-lg: 1024px
+$breakpoint-md: 768px
+
+*, *::before, *::after
+  box-sizing: border-box
+
+body
+  margin: 0
+  padding: 0
+  font-family: $font-body
+  color: $color-platinum
+  background-color: $color-obsidian
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  line-height: 1.6
+
+h1, h2, h3, h4, h5, h6
+  font-family: $font-headline
+  color: $color-ivory
+  font-weight: 700
+  line-height: 1.2
+  margin: 0 0 1rem
+
+h1
+  font-size: 2.5rem
+  letter-spacing: -0.02em
+
+h2
+  font-size: 1.75rem
+
+h3
+  font-size: 1.25rem
+
+a
+  color: $color-gold
+  text-decoration: none
+  transition: color $transition-fast
+
+p
+  margin: 0 0 1rem
+  color: $color-silver
+
+strong
+  color: $color-champagne
+  font-weight: 600
+
+.container
+  max-width: 1280px
+  margin: 0 auto
+  padding: 2rem 1.5rem
+
+.card
+  background: $gradient-card
+  border: 1px solid rgba($color-gold, 0.12)
+  border-radius: $radius-md
+  padding: 1.5rem
+  transition: border-color $transition-base, box-shadow $transition-base
+
+  &:hover
+    border-color: rgba($color-gold, 0.3)
+    box-shadow: $shadow-gold
+
+.label
+  font-family: $font-label
+  font-size: 0.875rem
+  text-transform: uppercase
+  letter-spacing: 0.12em
+  color: $color-gold
+
+.badge
+  display: inline-block
+  padding: 0.25rem 0.75rem
+  border-radius: 100px
+  font-size: 0.75rem
+  font-weight: 500
+  letter-spacing: 0.04em
+
+.badge-gold
+  background: rgba($color-gold, 0.15)
+  color: $color-gold
+  border: 1px solid rgba($color-gold, 0.25)
+
+.badge-emerald
+  background: rgba($color-emerald, 0.12)
+  color: $color-emerald
+  border: 1px solid rgba($color-emerald, 0.2)
+
+.badge-ruby
+  background: rgba($color-ruby, 0.12)
+  color: $color-ruby
+  border: 1px solid rgba($color-ruby, 0.2)
+
+.btn
+  display: inline-flex
+  align-items: center
+  gap: 0.5rem
+  padding: 0.75rem 1.5rem
+  border: none
+  border-radius: $radius-sm
+  font-family: $font-body
+  font-size: 0.875rem
+  font-weight: 500
+  cursor: pointer
+  transition: all $transition-base
+
+.btn-primary
+  background: $gradient-gold
+  color: $color-obsidian
+
+  &:hover
+    box-shadow: $shadow-gold
+    transform: translateY(-1px)
+
+.btn-ghost
+  background: transparent
+  color: $color-gold
+  border: 1px solid rgba($color-gold, 0.3)
+
+  &:hover
+    background: rgba($color-gold, 0.08)
+    border-color: rgba($color-gold, 0.5)
+
+.text-gold
+  color: $color-gold
+
+.text-emerald
+  color: $color-emerald
+
+.text-ruby
+  color: $color-ruby
+
+.grid
+  display: grid
+  gap: 1.5rem
+
+.grid-2
+  grid-template-columns: repeat(2, 1fr)
+
+.grid-3
+  grid-template-columns: repeat(3, 1fr)
+
+.grid-4
+  grid-template-columns: repeat(4, 1fr)
+
+@media (max-width: $breakpoint-lg)
+  .grid-4
+    grid-template-columns: repeat(2, 1fr)
+
+  .container
+    padding: 1.25rem
+
+@media (max-width: $breakpoint-md)
+  .grid-2, .grid-3, .grid-4
+    grid-template-columns: 1fr
+
+  h1
+    font-size: 1.75rem
+
+  h2
+    font-size: 1.375rem
+
+  h3
+    font-size: 1.125rem
+
+  .container
+    padding: 1rem
+
+  .card
+    padding: 1.25rem
+
+  .btn
+    padding: 0.625rem 1.25rem
+    font-size: 0.8125rem

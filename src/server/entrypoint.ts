@@ -1,7 +1,10 @@
-import { culet, defineServerEntry } from '@carats/ssr';
+import { defineServerEntry } from '@carats/ssr';
 import facets from '../client/facets.cara';
-import getUserProfile from './culets/Profile.cara';
+import getTradeData from './culets/trade';
+import getProfileData from './culets/profile';
+const seat = <T>(f: T) => f;
 
-culet('/profile/:id', getUserProfile);
+seat(getProfileData)
+seat(getTradeData)
 
 export default defineServerEntry(facets)

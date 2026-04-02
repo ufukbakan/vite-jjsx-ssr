@@ -1,0 +1,150 @@
+@use '../../base' as *
+
+.hero
+  padding: 4rem 0 3rem
+  text-align: center
+  border-bottom: 1px solid rgba($color-gold, 0.08)
+  background-image: linear-gradient(rgba($color-charcoal, 0.7)), url(/hero.png)
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  min-height: 50vh
+
+.hero-title
+  font-size: 3.5rem
+  font-weight: 900
+  margin: 0.75rem 0
+  letter-spacing: -0.03em
+
+.hero-subtitle
+  font-size: 1.125rem
+  color: $color-silver
+  max-width: 560px
+  margin: 0 auto 2rem
+  line-height: 1.7
+
+.hero-actions
+  display: flex
+  gap: 1rem
+  justify-content: center
+
+.section-title
+  margin: 2.5rem 0 1.25rem
+  padding-bottom: 0.75rem
+  border-bottom: 1px solid rgba($color-gold, 0.08)
+  font-size: 1.25rem
+
+.stat-card
+  text-align: center
+
+  .stat-value
+    font-family: $font-headline
+    font-size: 1.75rem
+    font-weight: 700
+    color: $color-ivory
+    margin: 0.5rem 0
+
+  .stat-unit
+    font-size: 0.875rem
+    color: $color-ash
+    font-weight: 400
+
+.table-card
+  overflow-x: hidden
+
+.asset-table
+  width: 100%
+  border-collapse: collapse
+
+  th
+    font-family: $font-label
+    text-transform: uppercase
+    letter-spacing: 0.1em
+    font-size: 0.75rem
+    color: $color-ash
+    text-align: left
+    padding: 0.75rem 1rem
+    border-bottom: 1px solid rgba($color-gold, 0.08)
+
+  td
+    padding: 1rem
+    border-bottom: 1px solid rgba($color-slate, 0.3)
+    color: $color-platinum
+    font-size: 0.9375rem
+
+  tr:last-child td
+    border-bottom: none
+
+  tr:hover td
+    background: rgba($color-gold, 0.03)
+
+  .ticker
+    display: inline-block
+    margin-left: 0.5rem
+    font-size: 0.75rem
+    color: $color-ash
+    background: rgba($color-slate, 0.4)
+    padding: 0.125rem 0.5rem
+    border-radius: 100px
+
+.activity-card
+  display: flex
+  gap: 1rem
+  align-items: flex-start
+
+.activity-icon
+  font-size: 1.25rem
+  width: 40px
+  height: 40px
+  display: flex
+  align-items: center
+  justify-content: center
+  background: rgba($color-charcoal, 0.6)
+  border-radius: $radius-sm
+  flex-shrink: 0
+
+.activity-details
+  strong
+    display: block
+    color: $color-ivory
+    font-size: 0.9375rem
+
+  p
+    margin: 0.25rem 0
+    font-size: 0.8125rem
+    color: $color-silver
+
+.activity-time
+  font-size: 0.75rem
+  color: $color-ash
+
+.text-sapphire
+  color: $color-sapphire
+
+@media (max-width: $breakpoint-md)
+  .hero
+    padding: 2.5rem 0 2rem
+
+  .hero-title
+    font-size: 2rem
+
+  .hero-subtitle
+    font-size: 0.9375rem
+
+  .hero-actions
+    flex-direction: column
+    align-items: center
+
+    .btn
+      width: 100%
+      max-width: 280px
+      justify-content: center
+
+  .table-card
+    overflow-x: auto
+
+  .asset-table
+    min-width: 560px
+
+  .stat-card .stat-value
+    font-size: 1.375rem

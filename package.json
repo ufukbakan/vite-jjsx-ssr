@@ -13,13 +13,13 @@
     "test": "vitest --run --coverage"
   },
   "dependencies": {
-    "@carats/core": "^0.0.13",
-    "@carats/csr": "^0.0.15",
-    "@carats/express": "^0.0.10",
+    "@carats/core": "^0.0.14",
+    "@carats/csr": "^0.0.18",
+    "@carats/express": "^0.0.12",
     "@carats/hooks": "^0.0.2",
-    "@carats/render": "^0.0.6",
+    "@carats/render": "^0.0.7",
     "@carats/ssg": "^0.0.4",
-    "@carats/ssr": "^0.0.8",
+    "@carats/ssr": "^0.0.14",
     "compression": "^1.8.1",
     "express": "^5.2.1",
     "jjsx": "^3.2.0",
@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@fetch-mock/vitest": "^0.2.18",
+    "@types/bun": "^1.3.11",
     "@types/compression": "^1.8.1",
     "@types/express": "^5.0.6",
     "@types/node": "^24.10.2",

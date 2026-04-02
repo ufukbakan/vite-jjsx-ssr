@@ -1,5 +1,6 @@
-import BuildCarats from '@carats/csr';
+import { mount, clientRender } from '@carats/csr';
 import facets from './facets.cara';
-import './style.css';
+import './base.sass';
 
-BuildCarats(facets).then(carats => carats.clientRender());
+mount(facets);
+clientRender();

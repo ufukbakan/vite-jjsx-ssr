@@ -4,6 +4,7 @@
     "useDefineForClassFields": true,
     "module": "esnext",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "typeRoots": ["./src/dto"],
     "skipLibCheck": true,
     "jsx": "react",
     "jsxFactory": "JJSX.jsxFactory",
@@ -23,5 +24,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "src/infra"]
+  "include": ["src", "src/dto/*"]
 }
