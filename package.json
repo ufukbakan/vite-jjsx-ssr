@@ -15,7 +15,7 @@
   "dependencies": {
     "@carats/core": "^0.0.14",
     "@carats/csr": "^0.0.18",
-    "@carats/express": "^0.0.12",
+    "@carats/express": "^0.0.13",
     "@carats/hooks": "^0.0.2",
     "@carats/render": "^0.0.7",
     "@carats/ssg": "^0.0.4",

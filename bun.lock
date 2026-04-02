@@ -6,7 +6,7 @@
       "dependencies": {
         "@carats/core": "^0.0.14",
         "@carats/csr": "^0.0.18",
-        "@carats/express": "^0.0.12",
+        "@carats/express": "^0.0.13",
         "@carats/hooks": "^0.0.2",
         "@carats/render": "^0.0.7",
         "@carats/ssg": "^0.0.4",
@@ -56,7 +56,7 @@
 
     "@carats/csr": ["@carats/csr@0.0.18", "", { "dependencies": { "jjsx": "^3.3.0" }, "peerDependencies": { "@carats/hooks": "^0.0.2", "@carats/render": "^0.0.7", "@carats/url": "^0.0.1" } }, "sha512-edL9Fq6U6ZzdxAyvgM77ahUTe4bZcbykTS873Ar55FOB4IUn5SLJJytwB0bAMmey9L8fFptYA98fajYOe9WWBw=="],
 
-    "@carats/express": ["@carats/express@0.0.12", "", { "peerDependencies": { "@carats/core": "^0.0.14", "@carats/ssr": "^0.0.10", "compression": "^1.8.1", "express": "^4.0.0 || ^5.0.0", "sirv": "^3.0.2", "vite": "^5.0.0 || ^6.0.0" } }, "sha512-Ayom/z0svYdR7ArTt1ArHY77lobC9AFeo+ZBCOYfmCgCMP4oatgAHbGnR+eaGtKlnCgT0hYCUlIWD4jhNefenw=="],
+    "@carats/express": ["@carats/express@0.0.13", "", { "peerDependencies": { "@carats/core": "^0.0.14", "@carats/ssr": "^0.0.10", "compression": "^1.8.1", "express": "^4.0.0 || ^5.0.0", "sirv": "^3.0.2", "vite": "^5.0.0 || ^6.0.0" } }, "sha512-Uzm4yHBUUC8s8Zz2WHVX2TuG5/y9X64EpLOMabLZ0ho4nvPAqLjqZjtpMMQBeUlN7FRomukVf7NVUpnrXu2dhw=="],
 
     "@carats/hooks": ["@carats/hooks@0.0.2", "", {}, "sha512-4F15NeZRhFZ0i7hFwBp/Vvt/jS4Ui7KR6gT+hOINR+DfLMTMA/goTAk+646IIro54ZA+JKO4dFvTLMlTabES3g=="],
 
