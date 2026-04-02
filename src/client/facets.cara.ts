@@ -14,7 +14,6 @@ export default defineFacets({
         '/trade/:symbol': Trade
     },
     suspense: {
-        loading: () => 'Loading...',
         error: ErrorPage,
         notFound: NotFound
     },
