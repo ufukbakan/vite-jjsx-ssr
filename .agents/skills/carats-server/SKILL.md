@@ -49,6 +49,7 @@ export default defineConfig({
 - If facets (the frontend routes) needs to be changed, learn carats-client skill.
 - The entrypoint file may contain culets (server side functions) that are used to fetch data from the database or other sources.
 - Culets are defined using `culet` function from `@carats/ssr`.
+- You should only define culets if a server side prop is needed for a facet route & if its feasible to retrieve by a single GET request.
 - If a culet is defined in another file, it must be seated by `seat` function from `@carats/ssr` in the entrypoint file. A minimal sample server entrypoint file:
 ```typescript
 import { culet, defineServerEntry, seat } from '@carats/ssr';
