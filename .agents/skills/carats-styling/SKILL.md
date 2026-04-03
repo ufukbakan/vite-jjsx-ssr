@@ -7,7 +7,8 @@ description: Use this skill when coding frontend classes or stylesheets and if u
 - sass peer dependency must be installed.
 - Carats prefers using semantic html with as less classes as possible.
 - Carats prefers defining design tokens & style resets at exact location: src/client/base.sass file
-- base.sass is the global stylesheet which should include top level design token variables. other pages should define their own SASS files while using `@use '../base' as *` (relative path from the SASS file) to access same design tokens.
+- base.sass is the global stylesheet which should include top level design token variables.
+- All other SASS files should import the base file via @use statement regarding its relative path to access same design tokens, must add "as *" to the end of the statement.
 - Colors, spacings, typography, breakpoints and other design tokens should be defined in base.sass file.
 - Design token variables must be top level and not nested.
 Well formatted design token samples:
