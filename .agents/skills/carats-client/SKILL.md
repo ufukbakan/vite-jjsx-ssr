@@ -21,6 +21,7 @@ Client coding is very crucial for carats.
 - There must be a entrypoint.ts file in src/client folder
 - There must be a index.html file in src/client folder which is compatible with vite html template
 - HTML template must contain <!--app-head--> and <!--app-html--> comments placed properly
+- HTML template must contain <script type="module" src="/entrypoint.ts"></script> before closing body tag
 - There must be a vite-env.d.ts file in src/client folder with exact content: "/// <reference types="vite/client" />"
 
 Facets are defined in facets.cara.ts file by defineFacets function from @carats/render and must be default exported.
