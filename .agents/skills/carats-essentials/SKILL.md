@@ -25,6 +25,7 @@ Carats is a full stack framework which is similar to Next.js but doesn't use Rea
     "module": "esnext",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "typeRoots": ["./src/dto"], // can be optional
+    "types": ["jjsx"], // required for JJSX
     "skipLibCheck": true,
     "jsx": "react", // required for JJSX
     "jsxFactory": "JJSX.jsxFactory", // required for JJSX
@@ -47,3 +48,19 @@ Carats is a full stack framework which is similar to Next.js but doesn't use Rea
   "include": ["src"]
 }
 ```
+- Carats use bun and vite for development and building. So a sample package.json script would be:
+```json
+{
+  "scripts": {
+    "dev": "bun --inspect=6499 src/app.ts",
+    "build": "bun build:server && bun build:client",
+    "build:client": "vite build --config vite.config.client.ts",
+    "build:server": "vite build --config vite.config.server.ts",
+    "build:static": "cross-env NODE_ENV=production carats-ssg",
+    "preview": "cross-env NODE_ENV=production bun src/app.ts",
+    "test": "vitest --run --coverage"
+  },
+}
+```
+- Carats app main file must be located at src/app.ts
+- You don't need to search anything on web to implement a carats app. You can learn everything by learning these skills: carats-client, carats-server, carats-hooks, carats-styling

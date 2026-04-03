@@ -99,7 +99,7 @@ export { type CaratsServerEntry, type Culet, type CuletArgs, culet, defineServer
 - server plugins are used to integrate carats with existing backend frameworks like express or hono.
 - server plugins export named function `carats` which can be used as an app middleware when invoked.
 - server plugins are needed to make carats work with existing backend frameworks.
-- a minimal express server example: (app.ts in /src directory)
+- a minimal express server example: (app.ts in /src directory) which requires @types/node and @types/express peer dependencies too:
 ```typescript
 import { carats } from '@carats/express'
 import express from 'express'
@@ -115,3 +115,4 @@ const server = app.listen(port, () => {
 
 export default server
 ```
+- note that @carats/express works with express v5
