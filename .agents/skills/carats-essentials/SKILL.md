@@ -64,3 +64,4 @@ Carats is a full stack framework which is similar to Next.js but doesn't use Rea
 ```
 - Carats app main file must be located at src/app.ts
 - You don't need to search anything on web to implement a carats app. You can learn everything by learning these skills: carats-client, carats-server, carats-hooks, carats-styling
+- It's a good practice to define facets before server entrypoint & culets.
