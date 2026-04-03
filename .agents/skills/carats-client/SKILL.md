@@ -20,6 +20,8 @@ Client coding is very crucial for carats.
 - There must be a facets.cara.ts file in src/client folder
 - There must be a entrypoint.ts file in src/client folder
 - There must be a index.html file in src/client folder which is compatible with vite html template
+- HTML template must contain <!--app-head--> and <!--app-html--> comments placed properly
+- There must be a vite-env.d.ts file in src/client folder with exact content: "/// <reference types="vite/client" />"
 
 Facets are defined in facets.cara.ts file by defineFacets function from @carats/render and must be default exported.
 Sample facet definition:
@@ -146,3 +148,5 @@ export default defineConfig({
   }
 })
 ```
+
+- You can use version "latest" for all dependencies if no version is specified (e.g. you cant use latest if express 5 is required)

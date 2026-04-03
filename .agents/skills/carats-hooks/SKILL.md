@@ -11,7 +11,10 @@ If hydration needed consider using hydrate or onMount. Both functions run only o
 hydrate callback is executed after the load event is dispatched, while onMount callback is executed immediately.
 so to retrieve dom elements which are created by the same component use hydrate.
 both functions may return a clear callback that can be used to clean up resources.
-if state management is needed use `use` function. considering below interface:
+if state management is needed use `use` function.
+Note that use is not reactive like react hooks, DOM update should be handled manually.
+
+Consider below interface:
 
 ```typescript
 type MaybePromise<T> = T | Promise<T>;
