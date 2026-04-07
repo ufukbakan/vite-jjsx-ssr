@@ -24,7 +24,7 @@ Carats is a full stack framework which is similar to Next.js but doesn't use Rea
     "useDefineForClassFields": true,
     "module": "esnext",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "typeRoots": ["./src/dto"], // can be optional
+    "typeRoots": ["./src/dto", "node_modules"], // this line is optional
     "types": ["jjsx"], // required for JJSX
     "skipLibCheck": true,
     "jsx": "react", // required for JJSX
