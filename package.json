@@ -14,15 +14,15 @@
   },
   "dependencies": {
     "@carats/core": "^0.0.14",
-    "@carats/csr": "^0.0.20",
-    "@carats/express": "^0.0.13",
+    "@carats/csr": "^0.0.22",
+    "@carats/express": "^0.0.14",
     "@carats/hooks": "^0.0.2",
-    "@carats/render": "^0.0.9",
-    "@carats/ssg": "^0.0.4",
-    "@carats/ssr": "^0.0.16",
+    "@carats/render": "^0.0.13",
+    "@carats/ssg": "^0.0.5",
+    "@carats/ssr": "^0.0.21",
     "compression": "^1.8.1",
     "express": "^5.2.1",
-    "jjsx": "^3.2.0",
+    "jjsx": "^3.3.0",
     "sass": "^1.97.3",
     "sirv": "^3.0.2"
   },
@@ -35,7 +35,7 @@
     "@vitest/coverage-v8": "4.0.18",
     "cross-env": "^10.1.0",
     "typescript": "~5.9.3",
-    "vite": "^7.2.7",
-    "vitest": "^4.0.18"
+    "vite": "^7.0.0",
+    "vitest": "^4.1.3"
   }
 }

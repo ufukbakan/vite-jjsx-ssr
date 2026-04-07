@@ -1,7 +1,12 @@
+import { CaratsComponent } from '@carats/render';
 import Layout from '../_layout';
 import './home.sass';
 
-export default function Home() {
+export default function Home(this: CaratsComponent) {
+    this.head = <>
+        <title>Home - The Vault</title>
+        <meta name="description" content="The ultimate sanctuary for sovereign wealth. Precision-engineered custody meets institutional-grade yield for the modern digital estate." />
+    </>;
     return (
         <Layout>
             <section class="hero">

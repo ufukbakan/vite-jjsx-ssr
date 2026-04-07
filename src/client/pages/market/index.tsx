@@ -1,8 +1,13 @@
+import { CaratsComponentWithThis } from "@carats/render";
 import Layout from "../_layout";
 import './market.sass';
 
 
-export default function Market() {
+const Market: CaratsComponentWithThis = function () {
+    this.head = <>
+        <title>Market - The Vault</title>
+        <meta name="description" content="Browse the market and trade your assets." />
+    </>
     return (
         <Layout>
             <section class="market-page container">
@@ -85,4 +90,6 @@ export default function Market() {
             </section>
         </Layout>
     )
-};
+}
+
+export default Market

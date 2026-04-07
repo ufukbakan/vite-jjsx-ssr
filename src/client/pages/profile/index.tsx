@@ -2,7 +2,11 @@ import { Burnish } from "@carats/render";
 import Layout from "../_layout";
 import './profile.sass';
 
-export default Burnish((user: User) => {
+export default Burnish(function (user: User) {
+  this.head = <>
+    <title>Profile for {user.name}</title>
+    <meta name="description" content={`Profile for ${user.name} on The Vault exchange.`} />
+  </>
   return (
     <Layout>
       <section id="profile" class="container">

@@ -2,7 +2,11 @@ import { Burnish } from "@carats/render"
 import Layout from "../_layout";
 import './trade.sass';
 
-export default Burnish<TradeData>((data) => {
+export default Burnish<TradeData>(function (data) {
+  this.head = <>
+    <title>Trade {data.symbol} - The Vault</title>
+    <meta name="description" content={`Trade ${data.symbol} on The Vault exchange.`} />
+  </>
   return (
     <Layout>
       <section id="trade" class="container">
