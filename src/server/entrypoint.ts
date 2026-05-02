@@ -1,9 +1,10 @@
-import { seat, culet, defineServerEntry } from '@carats/ssr';
+import { carats } from '@carats/express';
+import { culet, defineServerEntry } from '@carats/ssr';
+import express from 'express';
 import facets from '../client/facets.cara';
-import getTradeData from './culets/trade';
+import './culets/trade'; // must import culets defined in other files
 
-seat(getTradeData)
-culet<User>('/profile', () => {
+culet<User>('/profile', () => { // can define culets in entrypoint file too
   return {
     id: '1',
     name: 'Alexander Whitmore',
@@ -14,4 +15,13 @@ culet<User>('/profile', () => {
   };
 });
 
-export default defineServerEntry(facets)
+export const segments = defineServerEntry(facets) // must export segments for @carats/render
+
+const app = express()
+const port = process.env.PORT || 5173
+
+app.use(carats())
+
+export const server = app.listen(port, (err) => { // must export server for @carats/ssg
+  !err && console.log(`Server started at http://localhost:${port}`)
+})

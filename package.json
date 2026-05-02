@@ -5,21 +5,22 @@
   "type": "module",
   "scripts": {
     "dev": "bun --inspect=6499 src/app.ts",
+    "start": "cross-env NODE_ENV=production bun --inspect=6499 src/app.ts",
     "build": "bun build:server && bun build:client",
     "build:client": "vite build --config vite.config.client.ts",
     "build:server": "vite build --config vite.config.server.ts",
     "build:static": "cross-env NODE_ENV=production carats-ssg",
-    "preview": "cross-env NODE_ENV=production bun src/app.ts",
+    "preview": "cross-env NODE_ENV=production bun dist/app.js",
     "test": "vitest --run --coverage"
   },
   "dependencies": {
     "@carats/core": "^0.0.14",
-    "@carats/csr": "^0.0.22",
-    "@carats/express": "^0.0.14",
+    "@carats/csr": "^0.0.23",
+    "@carats/express": "^0.0.16",
     "@carats/hooks": "^0.0.2",
-    "@carats/render": "^0.0.13",
-    "@carats/ssg": "^0.0.5",
-    "@carats/ssr": "^0.0.21",
+    "@carats/render": "^0.0.14",
+    "@carats/ssg": "^0.0.7",
+    "@carats/ssr": "^0.0.23",
     "compression": "^1.8.1",
     "express": "^5.2.1",
     "jjsx": "^3.3.0",
@@ -35,7 +36,7 @@
     "@vitest/coverage-v8": "4.0.18",
     "cross-env": "^10.1.0",
     "typescript": "~5.9.3",
-    "vite": "^7.0.0",
+    "vite": "^8.0.8",
     "vitest": "^4.1.3"
   }
 }
