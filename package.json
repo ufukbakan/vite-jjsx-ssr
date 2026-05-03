@@ -15,15 +15,15 @@
   },
   "dependencies": {
     "@carats/core": "^0.0.14",
-    "@carats/csr": "^0.0.24",
+    "@carats/csr": "^0.0.26",
     "@carats/express": "^0.0.18",
     "@carats/hooks": "^0.0.2",
     "@carats/render": "^0.0.14",
     "@carats/ssg": "^0.0.9",
-    "@carats/ssr": "^0.0.23",
+    "@carats/ssr": "^0.0.25",
     "compression": "^1.8.1",
     "express": "^5.2.1",
-    "jjsx": "^3.3.0",
+    "jjsx": "^4.0.0",
     "sass": "^1.97.3",
     "sirv": "^3.0.2"
   },

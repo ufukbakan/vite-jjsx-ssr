@@ -5,6 +5,7 @@ import Home from './pages/home';
 import Market from './pages/market';
 import Profile from './pages/profile';
 import Trade from './pages/trade';
+import Layout from './pages/_layout';
 
 export default defineFacets({
     routes: {
@@ -15,7 +16,8 @@ export default defineFacets({
     },
     suspense: {
         error: ErrorPage,
-        notFound: NotFound
+        notFound: NotFound,
+        loading: () => <Layout><center>💎 Loading...</center></Layout>
     },
     inAppRouting: true
 });
