@@ -1,6 +1,6 @@
 import { goTo } from "@carats/csr"
 import { hydrate } from "@carats/hooks"
-import './search-bar.sass'
+import './SearchInput.sass'
 
 export default function SearchInput() {
     hydrate(() => {

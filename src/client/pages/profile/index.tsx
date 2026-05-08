@@ -1,12 +1,14 @@
 import { Burnish } from "@carats/render";
 import Layout from "../_layout";
 import './profile.sass';
+import ProfileSkeleton from './skeleton'
 
-export default Burnish(function (user: User) {
+const ProfilePage = Burnish(function (user: User) {
   this.head = <>
     <title>Profile for {user.name}</title>
     <meta name="description" content={`Profile for ${user.name} on The Vault exchange.`} />
   </>
+
   return (
     <Layout>
       <section id="profile" class="container">
@@ -98,3 +100,6 @@ export default Burnish(function (user: User) {
     </Layout>
   )
 })
+
+ProfilePage.frame = ProfileSkeleton;
+export default ProfilePage;

@@ -17,5 +17,10 @@ export default defineConfig({
     rollupOptions: {
       treeshake: true
     }
+  },
+  css: {
+    modules: {
+      localsConvention: 'dashes'
+    }
   }
 })
