@@ -1,8 +1,6 @@
 import { expect, test } from "vitest";
-import { init, transpile } from "jjsx";
+import { transpile } from "jjsx";
 import Profile from "../pages/profile";
-
-init();
 
 test("Render profile page", async () => {
     const mockUser = {

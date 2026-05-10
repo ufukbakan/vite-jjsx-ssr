@@ -5,16 +5,16 @@
     "": {
       "name": "vite-jjsx-ssr",
       "dependencies": {
-        "@carats/core": "^0.0.15",
-        "@carats/csr": "^0.0.28",
+        "@carats/core": "^0.0.16",
+        "@carats/csr": "^0.0.29",
         "@carats/express": "^0.0.18",
         "@carats/hooks": "^0.0.2",
-        "@carats/render": "^0.0.16",
+        "@carats/render": "^0.0.17",
         "@carats/ssg": "^0.0.9",
-        "@carats/ssr": "^0.0.25",
+        "@carats/ssr": "^0.0.26",
         "compression": "^1.8.1",
         "express": "^5.2.1",
-        "jjsx": "^4.0.3",
+        "jjsx": "^5.0.0",
         "sass-embedded": "^1.99.0",
         "sirv": "^3.0.2",
       },
@@ -45,19 +45,19 @@
 
     "@bufbuild/protobuf": ["@bufbuild/protobuf@2.12.0", "", {}, "sha512-B/XlCaFIP8LOwzo+bz5uFzATYokcwCKQcghqnlfwSmM5eX/qTkvDBnDPs+gXtX/RyjxJ4DRikECcPJbyALA8FA=="],
 
-    "@carats/core": ["@carats/core@0.0.15", "", { "peerDependencies": { "jjsx": "^4.0.0" } }, "sha512-nNjL8LPbHd4Ln5k2srV0fr1Kc+PpwUgjwA4CbBISvqKb6dDTw9GeMjusHOUq0IDceHS6VvElfbnpUO5B5szK3w=="],
+    "@carats/core": ["@carats/core@0.0.16", "", { "peerDependencies": { "jjsx": "^5.0.0" } }, "sha512-4BSHnfd7RWJebQm3idloOr/ZxEFjbWj2cfTE3uCyKZYah5iIQXov9t4qYG3H8l4rfuuQ5msKDqO9v9N+hgbMFA=="],
 
-    "@carats/csr": ["@carats/csr@0.0.28", "", { "peerDependencies": { "@carats/hooks": "^0.0.2", "@carats/render": "^0.0.16", "@carats/url": "^0.0.1", "jjsx": "^4.0.0" } }, "sha512-O58/tmR4+X+EKSx63Uxsg+o+aUcr5rsc3NJp6ZzHsn8XwHnSQ4H3J9Bi70CiJHUVw2DEk9QMT5VXRtDhLpbbGA=="],
+    "@carats/csr": ["@carats/csr@0.0.29", "", { "peerDependencies": { "@carats/hooks": "^0.0.2", "@carats/render": "^0.0.16", "@carats/url": "^0.0.1", "jjsx": "^5.0.0" } }, "sha512-hUw9dCXKBfIg/IcYSQCGvp1iNeqf7EskC9Hd/ExHBIfItO6Sg1rzEdJWYY3yqtDfuzqdGPaUfPuukeSsgR+WGQ=="],
 
     "@carats/express": ["@carats/express@0.0.18", "", { "peerDependencies": { "@carats/core": "^0.0.14", "@carats/ssr": "^0.0.21", "compression": "^1.8.1", "express": "^4.0.0 || ^5.0.0", "sirv": "^3.0.2", "vite": "^8.0.0" } }, "sha512-UcQbq4IG1ISZzVdEohysBqN72PuRpSQxTK7m6H1WB9W/50O7tanx2rLucaAGBk7+r22sPpL4EqO4DNGoYSnLmg=="],
 
     "@carats/hooks": ["@carats/hooks@0.0.2", "", {}, "sha512-4F15NeZRhFZ0i7hFwBp/Vvt/jS4Ui7KR6gT+hOINR+DfLMTMA/goTAk+646IIro54ZA+JKO4dFvTLMlTabES3g=="],
 
-    "@carats/render": ["@carats/render@0.0.16", "", { "peerDependencies": { "@carats/url": "^0.0.1", "jjsx": "^4.0.0" } }, "sha512-0JSkj/GtLoL+XlRnvM2lpCz0Da2AT+3qBA5vJ8kZ7aLVKdyIclPG7jeHqVjHLTaPYjp6am7ImVNTApRXMYumsg=="],
+    "@carats/render": ["@carats/render@0.0.17", "", { "peerDependencies": { "@carats/url": "^0.0.1", "jjsx": "^5.0.0" } }, "sha512-6pLiNFIBCHQp/yQzuhbXwSn/ne9uWV7orpgqf1qJdunrRRYEggCl8EE7z5uu3LiT3BShqA0OMAANgVcMtcMBwQ=="],
 
     "@carats/ssg": ["@carats/ssg@0.0.9", "", { "peerDependencies": { "@carats/core": "^0.0.14" }, "bin": { "carats-ssg": "dist/index.js" } }, "sha512-563UTcWVyXIZXrIsZ8qrGEEj//GfAKnnokBfY19T7v92M7GjfrcavWA885zt1uA4E4bJV0KWzwMmGhiJFITHrw=="],
 
-    "@carats/ssr": ["@carats/ssr@0.0.25", "", { "peerDependencies": { "@carats/core": "^0.0.14", "@carats/render": "^0.0.13", "@carats/url": "^0.0.1", "jjsx": "^4.0.0" } }, "sha512-gNmbghaR6fKIQJ3TQMiPspkU/pVwRCyf+1yGxUsMFLAr5f604OljAm3QArQpK6erGVzyy/gDVANsO3LXhdlw2Q=="],
+    "@carats/ssr": ["@carats/ssr@0.0.26", "", { "peerDependencies": { "@carats/core": "^0.0.16", "@carats/render": "^0.0.16", "@carats/url": "^0.0.1", "jjsx": "^5.0.0" } }, "sha512-4EO1BjRZYMftuX4LMEnnd5qozyAgYAixBc+5XZp5+jl5V5SPM/dB8fmkp5CD9WbyFruIH1M23YClwBrtXl1fiQ=="],
 
     "@carats/url": ["@carats/url@0.0.1", "", {}, "sha512-1QjGLNOF+xo/hGLryRsc/IQBM1bGjlErshTI31vmX498+Nxxrp2+QGxp66VsQHDD7DKhSSuk7e8lEwAMc1PWVQ=="],
 
@@ -321,7 +321,7 @@
 
     "istanbul-reports": ["istanbul-reports@3.2.0", "", { "dependencies": { "html-escaper": "^2.0.0", "istanbul-lib-report": "^3.0.0" } }, "sha512-HGYWWS/ehqTV3xN10i23tkPkpH46MLCIMFNCaaKNavAXTF1RkqxawEPtnjnGZ6XKSInBKkiOA5BKS+aZiY3AvA=="],
 
-    "jjsx": ["jjsx@4.0.3", "", {}, "sha512-anRxqPVHnT8U2M/K/gI+xtbkw9r3Sqdpnz9n6yamuxvQY+Dx8nkoVXEUmA0MyNQ0cFFYsavTyfRUAXrB24eA7Q=="],
+    "jjsx": ["jjsx@5.0.0", "", {}, "sha512-poK+iTe2Fh4tlF23OnvQtW47oG9JmV149pQEWXkl9M87gKFGTnsiSV+CEXtyaBFhe7RMKZ8LLwXJLLsMRu1vNA=="],
 
     "js-tokens": ["js-tokens@10.0.0", "", {}, "sha512-lM/UBzQmfJRo9ABXbPWemivdCW8V2G8FHaHdypQaIy523snUjog0W71ayWXTjiR+ixeMyVHN2XcpnTd/liPg/Q=="],
 

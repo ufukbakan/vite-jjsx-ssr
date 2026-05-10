@@ -14,16 +14,16 @@
     "test": "vitest --run --coverage"
   },
   "dependencies": {
-    "@carats/core": "^0.0.15",
-    "@carats/csr": "^0.0.28",
+    "@carats/core": "^0.0.16",
+    "@carats/csr": "^0.0.29",
     "@carats/express": "^0.0.18",
     "@carats/hooks": "^0.0.2",
-    "@carats/render": "^0.0.16",
+    "@carats/render": "^0.0.17",
     "@carats/ssg": "^0.0.9",
-    "@carats/ssr": "^0.0.25",
+    "@carats/ssr": "^0.0.26",
     "compression": "^1.8.1",
     "express": "^5.2.1",
-    "jjsx": "^4.0.3",
+    "jjsx": "^5.0.0",
     "sass-embedded": "^1.99.0",
     "sirv": "^3.0.2"
   },

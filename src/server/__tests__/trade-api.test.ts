@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import getTradeData from "../culets/trade";
+import getTradeData from "../service/get-trade-data";
 
 describe("Trade API", () => {
     test("GET /trade/btc", async () => {
