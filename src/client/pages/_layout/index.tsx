@@ -1,9 +1,9 @@
-import { hydrate } from "@carats/hooks";
+import { afterMount } from "@carats/hooks";
 import SearchInput from "../../components/SearchInput";
 import './_layout.sass';
 
 export default function Layout(props: JSX.ComponentProps) {
-    hydrate(() => {
+    afterMount(() => {
         const toggle = document.getElementById('mobile-menu-toggle');
         const menu = document.getElementById('mobile-menu');
         const overlay = document.getElementById('mobile-overlay');
